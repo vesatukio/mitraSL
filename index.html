@@ -68,7 +68,7 @@ let products=[
 ];
 let cart={};
 const rp=n=>new Intl.NumberFormat("id-ID",{style:"currency",currency:"IDR",maximumFractionDigits:0}).format(n);
-const SHEET_CSV_URL="";
+const SHEET_CSV_URL="https://docs.google.com/spreadsheets/d/e/2PACX-1vR7a2JWUxE0QIs2xZ1GbhzCRQ3UsWjYssHlsi_csVU4BLOkMui6EqVmNiFzaKbkTjoL57CTj3VVQOav/pub?gid=0&single=true&output=csv";
 const SHEET_CACHE_KEY="mitrasl_products_csv_v1";
 const SHEET_CACHE_MS=60000;
 function esc(s){return String(s??"").replace(/[&<>"']/g,ch=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[ch]))}
