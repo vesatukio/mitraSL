@@ -69,25 +69,38 @@ let cart={};
 const esc=s=>String(s??"").replace(/[&<>"\']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","\'":"&#39;"}[c]));
 const rp=n=>new Intl.NumberFormat("id-ID",{style:"currency",currency:"IDR",maximumFractionDigits:0}).format(n);
 async function refreshProductsFromJSON(){
+ const urls=[
+  new URL('products.json',document.baseURI).href+'?v='+Date.now(),
+  new URL('/mitraSL/products.json',location.origin).href+'?v='+Date.now()
+ ];
+ let lastError=null,data=null;
+ for(const url of [...new Set(urls)]){
+  try{
+   const res=await fetch(url,{cache:'no-store',headers:{'Accept':'application/json'}});
+   if(!res.ok)throw Error('HTTP '+res.status+' saat mengambil '+url);
+   const text=await res.text();
+   try{data=JSON.parse(text.replace(/^\\uFEFF/,''))}catch(parseError){throw Error('Isi bukan JSON valid di '+url+': '+parseError.message)}
+   if(!Array.isArray(data))throw Error('Format products.json harus berupa array');
+   break;
+  }catch(e){lastError=e;console.warn('Gagal memuat katalog dari '+url,e)}
+ }
  try{
-  const res=await fetch('./products.json?v='+Date.now(),{cache:'no-store'});
-  if(!res.ok)throw Error('products.json HTTP '+res.status);
-  const data=await res.json();
-  if(!Array.isArray(data))throw Error('Format products.json harus berupa array');
+  if(!Array.isArray(data))throw lastError||Error('Katalog tidak dapat dimuat dari alamat mana pun');
   products=data.filter(p=>p&&p.id&&p.name&&Array.isArray(p.variants)&&p.variants.length).map(p=>({
    id:String(p.id),name:String(p.name),sku:String(p.sku||p.id),icon:String(p.icon||'📦'),
-   image:/^https?:\/\//i.test(String(p.image||''))?String(p.image):'',
+   image:/^https?:\\/\\//i.test(String(p.image||''))?String(p.image):'',
    price:Math.max(0,Number(p.price)||0),
    retailDiscount:Math.max(0,Math.min(100,Number(p.retailDiscount)||0)),
    bulkDiscount:Math.max(0,Math.min(100,Number(p.bulkDiscount)||0)),
    variants:p.variants.map(v=>String(v)).filter(Boolean),
    variantPrices:p.variantPrices&&typeof p.variantPrices==='object'?p.variantPrices:{}
   }));
+  if(!products.length)throw Error('JSON terbaca, tetapi tidak ada produk dengan varian yang valid');
   for(const key of Object.keys(cart)){if(!products.some(p=>p.id===cart[key].id))delete cart[key]}
   renderProducts();update();renderCart();
  }catch(e){
   console.error('Gagal memuat products.json',e);
-  document.getElementById('products').innerHTML='<div class="empty" style="grid-column:1/-1">Data produk belum tersedia atau gagal dimuat. Periksa file products.json di GitHub.</div>';
+  document.getElementById('products').innerHTML='<div class="empty" style="grid-column:1/-1">Katalog gagal dimuat. Muat ulang halaman. Jika masih muncul, periksa Console browser untuk detail error.</div>';
  }
 }
 function totalQty(){return Object.values(cart).reduce((a,v)=>a+v.qty,0)}
