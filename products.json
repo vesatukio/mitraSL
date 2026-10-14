@@ -1,7 +1,7 @@
 [
   {
     "id": "ac-msl-normal",
-    "name": "Lampu AC MSL",
+    "name": "Lampu AC MSL12",
     "sku": "AC-MSL",
     "icon": "💡",
     "price": 4990,
@@ -57,7 +57,7 @@
   },
   {
     "id": "ac-msl-daftar-2",
-    "name": "Lampu AC MSL (Daftar Harga 2)",
+    "name": "Lampu AC MSL33",
     "sku": "AC-MSL-2",
     "icon": "💡",
     "price": 4500,
@@ -113,7 +113,7 @@
   },
   {
     "id": "ac-hitam",
-    "name": "Lampu AC Hitam",
+    "name": "Lampu AC Hitam8",
     "sku": "AC-HITAM",
     "icon": "💡",
     "price": 4500,
