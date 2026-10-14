@@ -8,31 +8,51 @@
     "retailDiscount": 0,
     "bulkDiscount": 0,
     "variants": [
-      "5W · 39,6 mm",
-      "7W · 41,7 mm",
-      "9W · 45,8 mm",
-      "12W · 45,8 mm",
-      "15W · 52 mm",
-      "18W · 58 mm",
-      "24W · 73,1 mm",
-      "30W · 94 mm",
-      "40W · 111 mm",
-      "50W · 131,7 mm",
-      "60W · 139,6 mm"
+      {
+        "name": "5W · 39,6 mm",
+        "price": 4990
+      },
+      {
+        "name": "7W · 41,7 mm",
+        "price": 5980
+      },
+      {
+        "name": "9W · 45,8 mm",
+        "price": 6620
+      },
+      {
+        "name": "12W · 45,8 mm",
+        "price": 8120
+      },
+      {
+        "name": "15W · 52 mm",
+        "price": 9780
+      },
+      {
+        "name": "18W · 58 mm",
+        "price": 11189
+      },
+      {
+        "name": "24W · 73,1 mm",
+        "price": 13890
+      },
+      {
+        "name": "30W · 94 mm",
+        "price": 18989
+      },
+      {
+        "name": "40W · 111 mm",
+        "price": 25790
+      },
+      {
+        "name": "50W · 131,7 mm",
+        "price": 32990
+      },
+      {
+        "name": "60W · 139,6 mm",
+        "price": 37390
+      }
     ],
-    "variantPrices": {
-      "5W · 39,6 mm": 4990,
-      "7W · 41,7 mm": 5980,
-      "9W · 45,8 mm": 6620,
-      "12W · 45,8 mm": 8120,
-      "15W · 52 mm": 9780,
-      "18W · 58 mm": 11189,
-      "24W · 73,1 mm": 13890,
-      "30W · 94 mm": 18989,
-      "40W · 111 mm": 25790,
-      "50W · 131,7 mm": 32990,
-      "60W · 139,6 mm": 37390
-    },
     "image": "https://down-id.img.susercontent.com/file/id-11134207-7qukw-lke1ysey0k74ec.webp"
   },
   {
@@ -44,31 +64,51 @@
     "retailDiscount": 0,
     "bulkDiscount": 0,
     "variants": [
-      "5W · 39,6 mm",
-      "7W · 41,7 mm",
-      "9W · 45,8 mm",
-      "12W · 45,8 mm",
-      "15W · 52 mm",
-      "18W · 58 mm",
-      "24W · 73,1 mm",
-      "30W · 94 mm",
-      "40W · 111 mm",
-      "50W · 131,7 mm",
-      "60W · 139,6 mm"
+      {
+        "name": "5W · 39,6 mm",
+        "price": 4500
+      },
+      {
+        "name": "7W · 41,7 mm",
+        "price": 5375
+      },
+      {
+        "name": "9W · 45,8 mm",
+        "price": 6110
+      },
+      {
+        "name": "12W · 45,8 mm",
+        "price": 7275
+      },
+      {
+        "name": "15W · 52 mm",
+        "price": 8435
+      },
+      {
+        "name": "18W · 58 mm",
+        "price": 9765
+      },
+      {
+        "name": "24W · 73,1 mm",
+        "price": 12500
+      },
+      {
+        "name": "30W · 94 mm",
+        "price": 16650
+      },
+      {
+        "name": "40W · 111 mm",
+        "price": 24125
+      },
+      {
+        "name": "50W · 131,7 mm",
+        "price": 30100
+      },
+      {
+        "name": "60W · 139,6 mm",
+        "price": 38100
+      }
     ],
-    "variantPrices": {
-      "5W · 39,6 mm": 4500,
-      "7W · 41,7 mm": 5375,
-      "9W · 45,8 mm": 6110,
-      "12W · 45,8 mm": 7275,
-      "15W · 52 mm": 8435,
-      "18W · 58 mm": 9765,
-      "24W · 73,1 mm": 12500,
-      "30W · 94 mm": 16650,
-      "40W · 111 mm": 24125,
-      "50W · 131,7 mm": 30100,
-      "60W · 139,6 mm": 38100
-    },
     "image": "https://down-id.img.susercontent.com/file/id-11134207-7qukw-lke1ysey0k74ec.webp"
   },
   {
@@ -80,29 +120,47 @@
     "retailDiscount": 0,
     "bulkDiscount": 0,
     "variants": [
-      "5W · 39,6 mm",
-      "7W · 41,7 mm",
-      "9W · 45,8 mm",
-      "12W · 45,8 mm",
-      "15W · 52 mm",
-      "18W · 58 mm",
-      "25W · 74 mm",
-      "30W · 94 mm",
-      "40W · 111 mm",
-      "50W · 131,7 mm"
+      {
+        "name": "5W · 39,6 mm",
+        "price": 4500
+      },
+      {
+        "name": "7W · 41,7 mm",
+        "price": 5375
+      },
+      {
+        "name": "9W · 45,8 mm",
+        "price": 6110
+      },
+      {
+        "name": "12W · 45,8 mm",
+        "price": 7275
+      },
+      {
+        "name": "15W · 52 mm",
+        "price": 8435
+      },
+      {
+        "name": "18W · 58 mm",
+        "price": 9765
+      },
+      {
+        "name": "25W · 74 mm",
+        "price": 12500
+      },
+      {
+        "name": "30W · 94 mm",
+        "price": 16650
+      },
+      {
+        "name": "40W · 111 mm",
+        "price": 24125
+      },
+      {
+        "name": "50W · 131,7 mm",
+        "price": 30100
+      }
     ],
-    "variantPrices": {
-      "5W · 39,6 mm": 4500,
-      "7W · 41,7 mm": 5375,
-      "9W · 45,8 mm": 6110,
-      "12W · 45,8 mm": 7275,
-      "15W · 52 mm": 8435,
-      "18W · 58 mm": 9765,
-      "25W · 74 mm": 12500,
-      "30W · 94 mm": 16650,
-      "40W · 111 mm": 24125,
-      "50W · 131,7 mm": 30100
-    },
     "image": "https://down-id.img.susercontent.com/file/id-11134207-7qukw-lke1ysey0k74ec.webp"
   },
   {
@@ -114,29 +172,47 @@
     "retailDiscount": 0,
     "bulkDiscount": 0,
     "variants": [
-      "5W · 39,6 mm",
-      "7W · 41,7 mm",
-      "9W · 45,8 mm",
-      "12W · 45,8 mm",
-      "15W · 52 mm",
-      "18W · 58 mm",
-      "25W · 74 mm",
-      "30W · 94 mm",
-      "40W · 111 mm",
-      "50W · 131,7 mm"
+      {
+        "name": "5W · 39,6 mm",
+        "price": 5780
+      },
+      {
+        "name": "7W · 41,7 mm",
+        "price": 6110
+      },
+      {
+        "name": "9W · 45,8 mm",
+        "price": 6790
+      },
+      {
+        "name": "12W · 45,8 mm",
+        "price": 8229
+      },
+      {
+        "name": "15W · 52 mm",
+        "price": 9880
+      },
+      {
+        "name": "18W · 58 mm",
+        "price": 14259
+      },
+      {
+        "name": "25W · 74 mm",
+        "price": 17789
+      },
+      {
+        "name": "30W · 94 mm",
+        "price": 20225
+      },
+      {
+        "name": "40W · 111 mm",
+        "price": 27350
+      },
+      {
+        "name": "50W · 131,7 mm",
+        "price": 33890
+      }
     ],
-    "variantPrices": {
-      "5W · 39,6 mm": 5780,
-      "7W · 41,7 mm": 6110,
-      "9W · 45,8 mm": 6790,
-      "12W · 45,8 mm": 8229,
-      "15W · 52 mm": 9880,
-      "18W · 58 mm": 14259,
-      "25W · 74 mm": 17789,
-      "30W · 94 mm": 20225,
-      "40W · 111 mm": 27350,
-      "50W · 131,7 mm": 33890
-    },
     "image": "https://down-id.img.susercontent.com/file/id-11134207-7qukw-lke1ysey0k74ec.webp"
   },
   {
@@ -148,27 +224,43 @@
     "retailDiscount": 0,
     "bulkDiscount": 0,
     "variants": [
-      "5W",
-      "7W",
-      "9W",
-      "12W",
-      "15W",
-      "18W",
-      "24W",
-      "30W",
-      "40W"
+      {
+        "name": "5W",
+        "price": 4500
+      },
+      {
+        "name": "7W",
+        "price": 5355
+      },
+      {
+        "name": "9W",
+        "price": 5980
+      },
+      {
+        "name": "12W",
+        "price": 7125
+      },
+      {
+        "name": "15W",
+        "price": 8475
+      },
+      {
+        "name": "18W",
+        "price": 9590
+      },
+      {
+        "name": "24W",
+        "price": 12700
+      },
+      {
+        "name": "30W",
+        "price": 16325
+      },
+      {
+        "name": "40W",
+        "price": 23100
+      }
     ],
-    "variantPrices": {
-      "5W": 4500,
-      "7W": 5355,
-      "9W": 5980,
-      "12W": 7125,
-      "15W": 8475,
-      "18W": 9590,
-      "24W": 12700,
-      "30W": 16325,
-      "40W": 23100
-    },
     "image": "https://down-id.img.susercontent.com/file/id-11134207-7qukw-lke1ysey0k74ec.webp"
   }
 ]
