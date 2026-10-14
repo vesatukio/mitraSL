@@ -1,1 +1,169 @@
-[]
+[
+  {
+    "id": "ac-msl-normal",
+    "name": "Lampu AC MSL",
+    "sku": "AC-MSL",
+    "icon": "💡",
+    "price": 4990,
+    "retailDiscount": 0,
+    "bulkDiscount": 0,
+    "variants": [
+      "5W · 39,6 mm",
+      "7W · 41,7 mm",
+      "9W · 45,8 mm",
+      "12W · 45,8 mm",
+      "15W · 52 mm",
+      "18W · 58 mm",
+      "24W · 73,1 mm",
+      "30W · 94 mm",
+      "40W · 111 mm",
+      "50W · 131,7 mm",
+      "60W · 139,6 mm"
+    ],
+    "variantPrices": {
+      "5W · 39,6 mm": 4990,
+      "7W · 41,7 mm": 5980,
+      "9W · 45,8 mm": 6620,
+      "12W · 45,8 mm": 8120,
+      "15W · 52 mm": 9780,
+      "18W · 58 mm": 11189,
+      "24W · 73,1 mm": 13890,
+      "30W · 94 mm": 18989,
+      "40W · 111 mm": 25790,
+      "50W · 131,7 mm": 32990,
+      "60W · 139,6 mm": 37390
+    }
+  },
+  {
+    "id": "ac-msl-daftar-2",
+    "name": "Lampu AC MSL (Daftar Harga 2)",
+    "sku": "AC-MSL-2",
+    "icon": "💡",
+    "price": 4500,
+    "retailDiscount": 0,
+    "bulkDiscount": 0,
+    "variants": [
+      "5W · 39,6 mm",
+      "7W · 41,7 mm",
+      "9W · 45,8 mm",
+      "12W · 45,8 mm",
+      "15W · 52 mm",
+      "18W · 58 mm",
+      "24W · 73,1 mm",
+      "30W · 94 mm",
+      "40W · 111 mm",
+      "50W · 131,7 mm",
+      "60W · 139,6 mm"
+    ],
+    "variantPrices": {
+      "5W · 39,6 mm": 4500,
+      "7W · 41,7 mm": 5375,
+      "9W · 45,8 mm": 6110,
+      "12W · 45,8 mm": 7275,
+      "15W · 52 mm": 8435,
+      "18W · 58 mm": 9765,
+      "24W · 73,1 mm": 12500,
+      "30W · 94 mm": 16650,
+      "40W · 111 mm": 24125,
+      "50W · 131,7 mm": 30100,
+      "60W · 139,6 mm": 38100
+    }
+  },
+  {
+    "id": "ac-hitam",
+    "name": "Lampu AC Hitam",
+    "sku": "AC-HITAM",
+    "icon": "💡",
+    "price": 4500,
+    "retailDiscount": 0,
+    "bulkDiscount": 0,
+    "variants": [
+      "5W · 39,6 mm",
+      "7W · 41,7 mm",
+      "9W · 45,8 mm",
+      "12W · 45,8 mm",
+      "15W · 52 mm",
+      "18W · 58 mm",
+      "25W · 74 mm",
+      "30W · 94 mm",
+      "40W · 111 mm",
+      "50W · 131,7 mm"
+    ],
+    "variantPrices": {
+      "5W · 39,6 mm": 4500,
+      "7W · 41,7 mm": 5375,
+      "9W · 45,8 mm": 6110,
+      "12W · 45,8 mm": 7275,
+      "15W · 52 mm": 8435,
+      "18W · 58 mm": 9765,
+      "25W · 74 mm": 12500,
+      "30W · 94 mm": 16650,
+      "40W · 111 mm": 24125,
+      "50W · 131,7 mm": 30100
+    }
+  },
+  {
+    "id": "ac-bm",
+    "name": "Lampu AC BM",
+    "sku": "AC-BM",
+    "icon": "💡",
+    "price": 5780,
+    "retailDiscount": 0,
+    "bulkDiscount": 0,
+    "variants": [
+      "5W · 39,6 mm",
+      "7W · 41,7 mm",
+      "9W · 45,8 mm",
+      "12W · 45,8 mm",
+      "15W · 52 mm",
+      "18W · 58 mm",
+      "25W · 74 mm",
+      "30W · 94 mm",
+      "40W · 111 mm",
+      "50W · 131,7 mm"
+    ],
+    "variantPrices": {
+      "5W · 39,6 mm": 5780,
+      "7W · 41,7 mm": 6110,
+      "9W · 45,8 mm": 6790,
+      "12W · 45,8 mm": 8229,
+      "15W · 52 mm": 9880,
+      "18W · 58 mm": 14259,
+      "25W · 74 mm": 17789,
+      "30W · 94 mm": 20225,
+      "40W · 111 mm": 27350,
+      "50W · 131,7 mm": 33890
+    }
+  },
+  {
+    "id": "bmsp",
+    "name": "BMSP (Watt / Isi)",
+    "sku": "BMSP",
+    "icon": "📦",
+    "price": 4500,
+    "retailDiscount": 0,
+    "bulkDiscount": 0,
+    "variants": [
+      "5W",
+      "7W",
+      "9W",
+      "12W",
+      "15W",
+      "18W",
+      "24W",
+      "30W",
+      "40W"
+    ],
+    "variantPrices": {
+      "5W": 4500,
+      "7W": 5355,
+      "9W": 5980,
+      "12W": 7125,
+      "15W": 8475,
+      "18W": 9590,
+      "24W": 12700,
+      "30W": 16325,
+      "40W": 23100
+    }
+  }
+]
