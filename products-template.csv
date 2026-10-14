@@ -1,4 +1,3 @@
-# HARGA DAN DISKON SAAT INI MASIH CONTOH — GANTI DENGAN DATA RESMI SEBELUM DIPAKAI BERJUALAN
 id,name,sku,icon,image,variant,price,retailDiscount,bulkDiscount,active
 ledac,LED AC MSL,MSL-LED-AC,💡,,H1,150000,32,38,yes
 ledac,LED AC MSL,MSL-LED-AC,💡,,H3,155250,32,38,yes
