@@ -92,8 +92,8 @@ async function refreshProductsFromJSON(){
    price:Math.max(0,Number(p.price)||0),
    retailDiscount:Math.max(0,Math.min(100,Number(p.retailDiscount)||0)),
    bulkDiscount:Math.max(0,Math.min(100,Number(p.bulkDiscount)||0)),
-   variants:p.variants.map(v=>String(v)).filter(Boolean),
-   variantPrices:p.variantPrices&&typeof p.variantPrices==='object'?p.variantPrices:{}
+   variants:p.variants.map(v=>typeof v==='string'?v:String(v&&(v.name||v.label)||'')).filter(Boolean),
+   variantPrices:p.variants.some(v=>v&&typeof v==='object')?Object.fromEntries(p.variants.filter(v=>v&&typeof v==='object').map(v=>[String(v.name||v.label),Math.max(0,Number(v.price)||0)])):(p.variantPrices&&typeof p.variantPrices==='object'?p.variantPrices:{})
   }));
   if(!products.length)throw Error('JSON terbaca, tetapi tidak ada produk dengan varian yang valid');
   for(const key of Object.keys(cart)){if(!products.some(p=>p.id===cart[key].id))delete cart[key]}
