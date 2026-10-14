@@ -32,7 +32,8 @@
       "40W · 111 mm": 25790,
       "50W · 131,7 mm": 32990,
       "60W · 139,6 mm": 37390
-    }
+    },
+    "image": "https://images.unsplash.com/photo-1674659719067-8735479ba10c?auto=format&fit=crop&w=800&q=80"
   },
   {
     "id": "ac-msl-daftar-2",
@@ -67,7 +68,8 @@
       "40W · 111 mm": 24125,
       "50W · 131,7 mm": 30100,
       "60W · 139,6 mm": 38100
-    }
+    },
+    "image": "https://images.unsplash.com/photo-1674659719067-8735479ba10c?auto=format&fit=crop&w=800&q=80"
   },
   {
     "id": "ac-hitam",
@@ -100,7 +102,8 @@
       "30W · 94 mm": 16650,
       "40W · 111 mm": 24125,
       "50W · 131,7 mm": 30100
-    }
+    },
+    "image": "https://images.unsplash.com/photo-1674659719067-8735479ba10c?auto=format&fit=crop&w=800&q=80"
   },
   {
     "id": "ac-bm",
@@ -133,7 +136,8 @@
       "30W · 94 mm": 20225,
       "40W · 111 mm": 27350,
       "50W · 131,7 mm": 33890
-    }
+    },
+    "image": "https://images.unsplash.com/photo-1674659719067-8735479ba10c?auto=format&fit=crop&w=800&q=80"
   },
   {
     "id": "bmsp",
@@ -164,6 +168,7 @@
       "24W": 12700,
       "30W": 16325,
       "40W": 23100
-    }
+    },
+    "image": "https://images.unsplash.com/photo-1674659719067-8735479ba10c?auto=format&fit=crop&w=800&q=80"
   }
 ]
