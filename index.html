@@ -126,7 +126,51 @@ function studioSetStatus(message){const el=document.getElementById("studioStatus
 function styleLabel(style){return ({casual:"santai",friendly:"ramah",energetic:"semangat",formal:"formal"})[style]||style}
 function playStudioVoice(){if(!("speechSynthesis" in window)||!("SpeechSynthesisUtterance" in window)){studioSetStatus("Browser ini tidak mendukung text-to-speech. Coba browser modern seperti Chrome atau Edge.");return}const text=document.getElementById("promoScript").value.trim();if(!text){studioSetStatus("Silakan tulis naskah promosi terlebih dahulu.");return}window.speechSynthesis.cancel();const utterance=new SpeechSynthesisUtterance(text);utterance.lang="id-ID";utterance.rate=Number(document.getElementById("promoRate").value)||1;const style=document.getElementById("promoStyle").value;utterance.pitch=style==="energetic"?1.15:style==="formal"?0.95:1.05;const selectedURI=document.getElementById("promoVoice").value,voice=studioVoices().find(v=>v.voiceURI===selectedURI);if(voice){utterance.voice=voice;utterance.lang=voice.lang||"id-ID"}studioCurrentUtterance=utterance;studioSetStatus("Memutar naskah · "+document.getElementById("promoCharacter").selectedOptions[0].text+" · gaya "+styleLabel(style)+" · "+utterance.rate.toFixed(1)+"×");const bubble=document.getElementById("speechBubble");if(bubble)bubble.textContent=text;utterance.onend=()=>studioSetStatus("Selesai diputar. Ubah naskah atau pengaturan lalu putar lagi.");utterance.onerror=(event)=>studioSetStatus("Audio gagal diputar ("+event.error+"). Coba pilih suara lain atau browser lain.");window.speechSynthesis.speak(utterance)}
 function pauseStudioVoice(){if(!("speechSynthesis" in window))return;if(window.speechSynthesis.speaking&&!window.speechSynthesis.paused){window.speechSynthesis.pause();studioSetStatus("Audio dijeda. Tekan tombol yang sama untuk melanjutkan.")}else if(window.speechSynthesis.paused){window.speechSynthesis.resume();studioSetStatus("Melanjutkan audio…")}else studioSetStatus("Belum ada audio yang diputar. Tekan Putar promosi terlebih dahulu.")}
-let marketingVoiceOn=false;let marketingVoiceUtterance=null;function toggleMarketingVoice(){const btn=document.getElementById("marketingVoiceToggle");marketingVoiceOn=!marketingVoiceOn;if(!("speechSynthesis" in window)||!("SpeechSynthesisUtterance" in window)){marketingVoiceOn=false;if(btn){btn.textContent="🔇 Suara tidak didukung";btn.classList.remove("on");btn.setAttribute("aria-pressed","false")}return}if(!marketingVoiceOn){window.speechSynthesis.cancel();marketingVoiceUtterance=null;if(btn){btn.textContent="🔊 Suara: OFF";btn.classList.remove("on");btn.setAttribute("aria-pressed","false")}return}const text="Halo, selamat datang di MITRA SL! Stok sparepart lampu lengkap. Pilih varian dan cek harga grosir sekarang!";marketingVoiceUtterance=new SpeechSynthesisUtterance(text);marketingVoiceUtterance.lang="id-ID";marketingVoiceUtterance.rate=0.95;marketingVoiceUtterance.pitch=1.08;marketingVoiceUtterance.onend=()=>{marketingVoiceOn=false;marketingVoiceUtterance=null;if(btn){btn.textContent="🔊 Suara: OFF";btn.classList.remove("on");btn.setAttribute("aria-pressed","false")}};marketingVoiceUtterance.onerror=()=>{marketingVoiceOn=false;marketingVoiceUtterance=null;if(btn){btn.textContent="🔊 Suara: OFF";btn.classList.remove("on");btn.setAttribute("aria-pressed","false")}};if(btn){btn.textContent="🔇 Matikan suara";btn.classList.add("on");btn.setAttribute("aria-pressed","true")}window.speechSynthesis.cancel();window.speechSynthesis.speak(marketingVoiceUtterance)}
+let marketingVoiceOn=false;let marketingVoiceUtterance=null;
+function marketingVoiceButtonState(label,on=false){const btn=document.getElementById("marketingVoiceToggle");if(!btn)return;btn.textContent=label;btn.classList.toggle("on",on);btn.setAttribute("aria-pressed",String(on))}
+function marketingVoiceStatus(message){const bubble=document.getElementById("speechBubble");if(bubble)bubble.textContent=message}
+function toggleMarketingVoice(){
+ const btn=document.getElementById("marketingVoiceToggle");
+ const supported=("speechSynthesis" in window)&&("SpeechSynthesisUtterance" in window);
+ if(!supported){
+  marketingVoiceOn=false;
+  marketingVoiceButtonState("🔊 Coba buka di Chrome");
+  marketingVoiceStatus("Browser bawaan tidak menyediakan fitur suara. Buka halaman ini di Google Chrome untuk mencoba suara marketing.");
+  return;
+ }
+ if(marketingVoiceOn){
+  window.speechSynthesis.cancel();marketingVoiceOn=false;marketingVoiceUtterance=null;
+  marketingVoiceButtonState("🔊 Suara: OFF");marketingVoiceStatus("Suara dimatikan. Tekan tombol untuk mendengarkan lagi.");return;
+ }
+ const text="Halo, selamat datang di MITRA SL! Stok sparepart lampu lengkap. Pilih varian dan cek harga grosir sekarang!";
+ marketingVoiceOn=true;
+ marketingVoiceButtonState("⏳ Menyiapkan suara…",true);
+ marketingVoiceStatus("Menyiapkan suara marketing…");
+ try{
+  window.speechSynthesis.cancel();
+  const utterance=new SpeechSynthesisUtterance(text);
+  utterance.lang="id-ID";utterance.rate=0.92;utterance.pitch=1.05;utterance.volume=1;
+  const voices=window.speechSynthesis.getVoices();
+  const indonesianVoice=voices.find(v=>(v.lang||"").toLowerCase().startsWith("id"));
+  if(indonesianVoice)utterance.voice=indonesianVoice;
+  marketingVoiceUtterance=utterance;
+  utterance.onstart=()=>{marketingVoiceButtonState("🔇 Matikan suara",true);marketingVoiceStatus("Tim marketing MITRA SL sedang berbicara…")};
+  utterance.onend=()=>{marketingVoiceOn=false;marketingVoiceUtterance=null;marketingVoiceButtonState("🔊 Dengarkan Penawaran");marketingVoiceStatus("Tekan tombol untuk mendengarkan penawaran marketing lagi.")};
+  utterance.onerror=(event)=>{
+   marketingVoiceOn=false;marketingVoiceUtterance=null;
+   marketingVoiceButtonState("🔊 Coba lagi");
+   marketingVoiceStatus("Suara gagal diputar ("+(event.error||"error") +"). Naikkan volume media HP atau buka website ini di Google Chrome.");
+  };
+  window.speechSynthesis.speak(utterance);
+  // Beberapa browser Android mengembalikan daftar suara terlambat.
+  if(window.speechSynthesis.paused)window.speechSynthesis.resume();
+ }catch(error){
+  marketingVoiceOn=false;marketingVoiceUtterance=null;
+  marketingVoiceButtonState("🔊 Coba lagi");
+  marketingVoiceStatus("Browser gagal memulai suara. Coba buka website ini di Google Chrome.");
+  console.error("MITRA SL voice error:",error);
+ }
+}
 function speakOffer(){playStudioVoice()}
 function stopOffer(){if("speechSynthesis" in window)window.speechSynthesis.cancel();studioCurrentUtterance=null;studioSetStatus("Suara dihentikan. Ubah pengaturan jika perlu, lalu tekan Putar promosi.")}
 if("speechSynthesis" in window){refreshStudioVoiceOptions();window.speechSynthesis.onvoiceschanged=refreshStudioVoiceOptions}
