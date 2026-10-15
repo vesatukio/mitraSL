@@ -50,6 +50,18 @@
 .studio-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}.studio-actions .btn{flex:1;min-width:130px}
 .studio-status{background:#eef8ee;color:#18512e;border-radius:10px;padding:11px;margin-top:12px;font-size:12px;line-height:1.5;min-height:42px}
 @media(min-width:600px){.studio-card{padding:22px}.studio-grid{grid-template-columns:1fr 1fr}}
+
+/* Perbaikan layout gambar kartu produk: gambar dibatasi di dalam area foto dan tidak boleh menimpa kartu lain. */
+.products{align-items:stretch;grid-auto-flow:row;min-width:0}
+.products>.card{position:relative;min-width:0;width:100%;height:100%;align-self:stretch;isolation:isolate}
+.card .photo{position:relative;display:flex;align-items:center;justify-content:center;width:100%;height:100px;min-width:0;min-height:100px;flex:0 0 100px;overflow:hidden;contain:layout paint}
+.card .photo>img{display:block;position:relative;z-index:0;flex:0 1 auto;width:100%;height:100%;max-width:100%;max-height:100%;min-width:0;min-height:0;object-fit:contain;padding:18px 8px 6px;box-sizing:border-box}
+.card .photo>.tag{z-index:2;max-width:calc(100% - 10px);white-space:nowrap;pointer-events:none}
+.card>.name{position:relative;z-index:1;min-width:0;overflow-wrap:anywhere}
+.card>.body{position:relative;z-index:1;min-width:0}
+@media(min-width:600px){.card .photo{height:112px;min-height:112px;flex-basis:112px}}
+@media(min-width:900px){.card .photo{height:120px;min-height:120px;flex-basis:120px}}
+
 </style></head><body>
 <div class="top">MITRA SL · HARGA PER VARIAN · DISKON KHUSUS TIAP PRODUK · HARGA CONTOH</div>
 <header class="nav"><div class="wrap navin"><a href="#" class="logo">💡 MITRA SL<small>PUSAT SPAREPART LAMPU</small></a><button class="cartbtn" onclick="openCart()">🛒 Keranjang <span class="count" id="count">0</span></button></div></header>
