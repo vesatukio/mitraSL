@@ -1,0 +1,20 @@
+{
+  "name": "UntungKu — Pembukuan Penjualan",
+  "short_name": "UntungKu",
+  "description": "Catat jumlah penjualan dan pantau keuntungan harian, mingguan, bulanan.",
+  "lang": "id",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#f3f7f4",
+  "theme_color": "#145b46",
+  "icons": [
+    {
+      "src": "./icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
