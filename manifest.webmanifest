@@ -1,0 +1,20 @@
+{
+  "name": "MITRA SL | Sparepart Lampu",
+  "short_name": "MITRA SL",
+  "description": "Katalog sparepart lampu MITRA SL — retail dan grosir.",
+  "lang": "id",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#f4fbf3",
+  "theme_color": "#278d48",
+  "icons": [
+    {
+      "src": "./icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
